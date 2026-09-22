@@ -1,7 +1,6 @@
 class Calculator:
 
-    def __init__(self, operation, first, second):
-        self.operation = operation
+    def __init__(self, first, second):
         self.first = first
         self.second = second
 
@@ -19,21 +18,28 @@ class Calculator:
             return 0
         return self.first / self.second
 
-    def calculate(self):
-        if self.operation == "add":
+    def calculate(self, operation):
+        if operation == "add":
             return self.add()
-        elif self.operation == "subtract":
+        elif operation == "subtract":
             return self.subtract()
-        elif self.operation == "multiply":
+        elif operation == "multiply":
             return self.multiply()
-        elif self.operation == "divide":
+        elif operation == "divide":
            return self.divide()
         else:
-            print("Invalid operation")
+            return "Invalid operation"
 
-operation = input("What operation would you like to do? (add/subtract/multiply/divide): ")
-first = float(input("Enter first number: "))
-second = float(input("Enter second number: "))
+def get_input():
+    operation = input("What operation would you like to do? (add/subtract/multiply/divide): ")
+    first = float(input("Enter first number: "))
+    second = float(input("Enter second number: "))
+    return operation, first, second
 
-test = Calculator(operation, first, second)
-print(f"{test.calculate()}")
+def main():
+    operation, first, second = get_input()
+    calculator = Calculator(first, second)
+    result = calculator.calculate(operation)
+    print(f"Result: {result}")
+
+main()
