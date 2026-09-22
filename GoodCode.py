@@ -35,5 +35,5 @@ operation = input("What operation would you like to do? (add/subtract/multiply/d
 first = float(input("Enter first number: "))
 second = float(input("Enter second number: "))
 
-test = calculator(operation, first, second)
+test = Calculator(operation, first, second)
 print(f"{test.calculate()}")
