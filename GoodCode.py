@@ -15,7 +15,7 @@ class Calculator:
 
     def divide(self):
         if self.second == 0:
-            return 0
+            return "Cannot divide by zero"
         return self.first / self.second
 
     def calculate(self, operation):
