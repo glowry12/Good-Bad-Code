@@ -21,7 +21,7 @@ class Calculator:
             return result
         if self.operation == "divide":
             if self.second == 0:
-                return
+                return "Cannot divide by zero"
             result = self.first / self.second
             return result
         if self.operation != "divide" and self.operation != "multiply" and self.operation != "add" and self.operation != "sub":
